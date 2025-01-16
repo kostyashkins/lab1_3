@@ -17,6 +17,10 @@ if __name__ == "__main__":
     # Ввод чисел от пользователя
     numbers = list(map(int, input("Введите числа через пробел: ").split()))
 
-    # Сортировка по возрастанию
-    sorted_numbers = bubble_sort(numbers.copy(), ascending=True)
-    print("Отсортировано по возрастанию:", sorted_numbers)
+    # Запрос направления сортировки
+    order = input("Введите направление сортировки (возрастание/убывание): ").strip().lower()
+    ascending = order == "возрастание"
+
+    # Сортировка
+    sorted_numbers = bubble_sort(numbers.copy(), ascending=ascending)
+    print("Отсортированный массив:", sorted_numbers)
